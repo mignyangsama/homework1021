@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录 - 简书</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="jianshu.css">
+</head>
+<body>
+<div id="wrap">
+    <div id="logo"><img src="img/1.png" alt=""></div>
+    <div id="content">
+        <div id="title">
+            <a id="a1" href="jianshu.html">登录</a>
+            <b>·</b>
+            <a id="a2" href="jianshu1.html">注册</a>
+        </div>
+        <div id="middle">
+            <form id="m_top" action="" method="post">
+                <div id="m_top1">
+                    <input type="text" id="input1" v-model="username" placeholder="手机号或邮箱">
+                    <img class="img1" src="img/10.png" alt="">
+                    <input type="password" id="input2" name="password" placeholder="密码">
+                    <img class="img2" src="img/11.png" alt="">
+                </div>
+                <div id="m_top2">
+                    <img id="img3" src="img/3.png" alt="">
+                    <span>点击按钮进行验证</span>
+                    <a href="http://www.geetest.com/index">
+                        <img id="img4" src="img/4.png" alt="">
+                    </a>
+                </div>
+                <div id="m_bottom1">
+                    <input type="checkbox" value="true" checked="checked">
+                    <span id="span1">记住我</span>
+                </div>
+                <div id="m_bottom2">
+                    <a href="jianshu2.html" id="m_bottom2_1">登录遇到问题？</a>
+                </div>
+                <button v-on:click="login" id="submit">登录</button>
+                <!--<input type="submit" v-on:click="login" value="登录" id="submit">-->
+            </form>
+            <div class="m_bottom">
+                <h6 class="h6"><before></before>社交帐号登录<after></after></h6>
+            </div>
+            <div id="m_bottom_3">
+                <a href="https://weibo.com/">
+                    <img src="img/5.png" alt="">
+                </a>
+                <a href="https://wx.qq.com/">
+                    <img src="img/6.png" alt="">
+                </a>
+                <a href="https://im.qq.com/">
+                    <img src="img/7.png" alt="">
+                </a>
+                <a id="a4" href="###">其它
+                    <img id="img9" src="img/9.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+new Vue({
+    el:'#m_top',
+    data:{
+        username:'',
+        password:''
+    },
+    methods:{
+        login:function () {
+            if (this.username && this.password != ""){
+                alert(this.username + '：登陆成功')
+            }else {
+                alert("请输入账号和密码！！！");
+            }
+
+        }
+    }
+})
+</script>
+</body>
+</html>

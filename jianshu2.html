@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用手机号重置密码</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="jianshu2.css">
+</head>
+<body>
+<div id="wrap">
+    <div id="logo"><img src="img/1.png" alt=""></div>
+    <div id="content">
+        <h4 class="title">用手机号重置密码</h4>
+        <form id="form" action="" method="post">
+            <div id="c_1">
+                <input type="text"  id="mobile_number" v-model="mobile_number" placeholder="手机号">
+                <img class="img1" src="img/12.png" alt="">
+            </div>
+            <div id="c_2">
+                <input type="text" id="xinxi" v-model="xinxi" placeholder="短信验证码">
+                <a href="###">发送验证码</a>
+                <img class="img1" src="img/daunxi.png" alt="">
+            </div>
+            <div id="c_3">
+                <input type="password" id="password" v-model="password" placeholder="请输入密码">
+                <img class="img1" src="img/11.png" alt="">
+            </div>
+            <div id="c_4">
+                <input type="password" id="password1" v-model="password1" placeholder="请再输入一遍新密码">
+                <img class="img1" src="img/11.png" alt="">
+            </div>
+            <input type="submit" v-on:click="login" value="重置密码" id="submit">
+        </form>
+        <a id="a_1" href="jianshu.html">
+            <img class="img2" src="img/6666.png" alt="">
+            返回登录注册
+        </a>
+    </div>
+</div>
+<script>
+    new Vue({
+        el:'#form',
+        data:{
+            xinxi:'',
+            mobile_number:'',
+            password:'',
+            password1:''
+        },
+        methods:{
+            login:function () {
+                if(this.mobile_number == "" ){
+                    alert("请填写正确手机号")
+                }
+                if (this.xinxi == ""){
+                    alert("短信验证码")
+                }
+                if(this.password == ""){
+                    alert("请输入密码")
+                }
+                if (this.password1 == ""){
+                    alert("请再一次输入密码")
+                }
+                if(this.password && this.mobile_number && this.xinxi && this.password1 !=""){
+                    alert('恭喜'+ this.mobile_number + '：登陆成功')
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

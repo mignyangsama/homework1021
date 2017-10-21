@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实例的属性，方法与属性相同</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>{{message}}</h1>
+</div>
+<script>
+    // 1. 创建Vue的实例
+    //    传入一些 options，具体参见API文档
+    var data = { message:'Hello,Vue.js'}
+    var vm = new Vue({
+        el:'#app',
+        data:data,
+        methods:{
+            clicked:function () {
+                console.log('我是一个点击事件')
+            }
+        }
+    })
+    // 2. data
+    // 1> data 是 Vue 实例的属性
+    //    凡是 Vue 实例的属性，获取方式 通过 $ 获取
+    //    例如：data 的获取方式 vm.$data
+    console.log(vm.$data)
+    console.log(vm.$el)
+    // 2> 获取 data 中的属性
+    console.log(vm.message)
+    console.log(vm.$data.message)
+    // 3> 比较
+    console.log(vm.$data === data)
+    // 4> 修改
+    //    对属性进行修改，会影响源数据
+    vm.message = '嘿嘿😜'
+    console.log(data.message)
+
+    //el
+    console.log(vm.$el === document.getElementById('app'))
+    vm.clicked()
+    //methods 与 data 相同
+</script>
+</body>
+</html>

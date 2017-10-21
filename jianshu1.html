@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册 - 简书</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="jianshu.css">
+</head>
+<body>
+<div id="wrap">
+    <div id="logo"><img src="img/1.png" alt=""></div>
+    <div id="content">
+        <div id="title">
+            <a id="a2" href="jianshu.html">登录</a>
+            <b>·</b>
+            <a id="a1" href="jianshu1.html">注册</a>
+        </div>
+        <div id="zhuce">
+            <form id="zhece_1" action="" method="post">
+                <div id="z_1">
+                    <input placeholder="你的昵称" type="text" v-model="nickname" id="nickname">
+                    <img class="img1" src="img/10.png" alt="">
+                </div>
+                <div id="z_2">
+                    <input placeholder="手机号" type="tel" v-model="mobile_number" id="mobile_number">
+                    <img class="img1" src="img/12.png" alt="">
+                </div>
+                <div id="z_3">
+                    <input placeholder="设置密码" type="password" name="password" id="user_password">
+                    <img class="img1" src="img/11.png" alt="">
+                </div>
+                <input type="submit" v-on:click="login"  id="tijiao" value="注册">
+                <p id="p1">
+                    点击 “注册” 即表示您同意并愿意遵守简书
+                    <br>
+                    <a href="http://www.jianshu.com/p/c44d171298ce">用户协议</a>
+                    和
+                    <a href="http://www.jianshu.com/p/2ov8x3">隐私政策</a>  。
+                </p>
+            </form>
+            <div class="m_bottom">
+                <h6 class="h6"><before></before>社交账号直接注册<after></after></h6>
+            </div>
+            <div id="m_bottom_4">
+                <a href="https://weibo.com/">
+                    <img src="img/5.png" alt="">
+                </a>
+                <a href="https://wx.qq.com/">
+                    <img src="img/6.png" alt="">
+                </a>
+                <a href="https://im.qq.com/">
+                    <img src="img/7.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+new Vue({
+    el:'#zhece_1',
+    data:{
+        nickname:'',
+        mobile_number:'',
+        password:''
+    },
+    methods:{
+      login:function () {
+          if (this.nickname == ""){
+              alert("请填写昵称")
+          }
+          if(this.mobile_number == ""){
+              alert("请填写正确手机号")
+          }
+          if(this.password == ""){
+              alert("请输入密码")
+          }
+          if(this.password && this.mobile_number && this.nickname !=""){
+              alert('恭喜'+this.username + '：登陆成功')
+          }
+      }
+    }
+})
+</script>
+</body>
+</html>
